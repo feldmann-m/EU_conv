@@ -34,7 +34,7 @@ args = parser.parse_args()
 # var = args.file-1
 n = args.number
 
-var = ['conv','t2m','cape','rh','z500'][n]
+var = ['conv','t2m','cape','rh','z500','q900'][n]
 
 verbose=True
 
