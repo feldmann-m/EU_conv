@@ -110,6 +110,8 @@ def generate_random_indices(time_max, num_samples):
 
 def get_composite(res,clim,t_p,nc_p,tag,want_pca=False):
     print(t_p.size,t_p)
+
+    clim = clim.pad(time=(5,5),constant_values=np.nan)
     coords1 = {
         'time': np.arange(-5,6,1),  # Time dimension
         'lat': clim.lat,  # Latitude dimension
@@ -405,7 +407,7 @@ var='LTG_ANOM'
 
 tag = regtag+'clim'
 res=0.25
-tag = regtag+'_'+var+'_'+exp
+tag = regtag+'1_'+var+'_'+exp
 
 get_composite(res,deseason_dset,conv_events,rest_days,'all_'+tag)
 get_composite(res,deseason_dset,first_days,rest_days,'frs_'+tag)
